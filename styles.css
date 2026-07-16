@@ -762,8 +762,8 @@ a.contact-channel:hover { transform: translateY(-3px); background: rgba(255,255,
   .hero-tags { display: none; }
   .visual-frame { min-height: 330px; padding: 16px; border-radius: 24px; }
   .visual-frame::before { border-radius: 23px; }
-  .shield-stage { inset: 6px -42px -52px 0; }
-  .hero-dog { width: min(140%, 490px); }
+  .shield-stage { inset: 6px -20px 0; }
+  .hero-dog { width: min(150%, 650px); }
   .visual-frame blockquote { margin-bottom: 18px; font-size: .98rem; }
   .visual-topline span:last-child { display: none; }
   .visual-footer { align-items: flex-end; }
@@ -771,6 +771,16 @@ a.contact-channel:hover { transform: translateY(-3px); background: rgba(255,255,
   .trust-grid > div { padding: 14px 9px; }
   .section-heading h2, .help-header h2, .story-copy h2, .final-card h2 { font-size: clamp(2rem, 9.2vw, 2.9rem); }
   .section-intro { margin-top: 14px; font-size: .92rem; }
+  .care-heading,
+  .other-help-heading {
+    text-align: left;
+    margin-inline: 0;
+  }
+  .care-heading .section-intro,
+  .other-help-heading .section-intro {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .pillars-grid, .help-grid { grid-template-columns: 1fr; }
   .pillars-grid { margin-top: 32px; gap: 12px; }
   .pillar-card { padding: 20px; }
