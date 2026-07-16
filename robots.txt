@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Quando o domínio final estiver definido, adicione:
-# Sitemap: https://seudominio.com.br/sitemap.xml
+Sitemap: https://institutobaktaran.mirevadesign.com.br/sitemap.xml
