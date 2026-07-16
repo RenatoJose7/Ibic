@@ -107,6 +107,7 @@ const animalsGrid = document.querySelector('[data-animals-grid]');
 const animalFilterButtons = document.querySelectorAll('[data-animal-filter]');
 const animalsViewport = document.querySelector('[data-animals-viewport]');
 const animalScrollButtons = document.querySelectorAll('[data-animal-scroll]');
+const animalsCounter = document.querySelector('[data-animals-counter]');
 const animalImageVersion = '20260715-2';
 
 function animalCardTemplate(animal, index) {
@@ -144,6 +145,8 @@ function updateAnimalNav() {
 
   const maxScroll = animalsViewport.scrollWidth - animalsViewport.clientWidth;
   const hasOverflow = maxScroll > 2;
+  const currentPage = hasOverflow ? Math.round(animalsViewport.scrollLeft / animalsViewport.clientWidth) + 1 : 1;
+  const totalPages = hasOverflow ? Math.ceil(animalsViewport.scrollWidth / animalsViewport.clientWidth) : 1;
 
   animalScrollButtons.forEach((button) => {
     const direction = button.dataset.animalScroll;
@@ -151,6 +154,10 @@ function updateAnimalNav() {
     const isNextDisabled = direction === 'next' && animalsViewport.scrollLeft >= maxScroll - 2;
     button.disabled = !hasOverflow || isPrevDisabled || isNextDisabled;
   });
+
+  if (animalsCounter) {
+    animalsCounter.textContent = `${currentPage} / ${totalPages}`;
+  }
 }
 
 if (animalsViewport && animalScrollButtons.length) {
@@ -186,7 +193,7 @@ if (animalFilterButtons.length && animalsGrid) {
 
       if (animalsViewport) {
         animalsViewport.scrollTo({ left: 0, behavior: 'smooth' });
-        window.requestAnimationFrame(updateAnimalNav);
+        window.setTimeout(updateAnimalNav, 120);
       }
     });
   });

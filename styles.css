@@ -364,6 +364,12 @@ button { color: inherit; }
 }
 .animals-nav-prev { left: -24px; }
 .animals-nav-next { right: -24px; }
+.animals-counter {
+  display: none;
+  color: var(--navy-800);
+  font-size: .78rem;
+  font-weight: 900;
+}
 .animal-card {
   min-width: 0;
   border: 1px solid var(--line-light);
@@ -725,14 +731,33 @@ a.contact-channel:hover { transform: translateY(-3px); background: rgba(255,255,
   .animals-grid { gap: 16px; grid-auto-columns: calc((100% - 16px) / 1.55); }
   .animals-nav {
     top: auto;
-    bottom: -72px;
+    bottom: -50px;
+    width: 44px;
+    height: 44px;
+    border-color: rgba(16,35,43,.1);
+    box-shadow: 0 14px 32px rgba(16,35,43,.13);
     transform: none;
   }
   .animals-nav:hover { transform: scale(1.04); }
   .animals-nav:disabled { transform: none; }
-  .animals-nav-prev { left: calc(50% - 58px); }
-  .animals-nav-next { right: calc(50% - 58px); }
-  .animals-carousel { padding-bottom: 78px; }
+  .animals-nav-prev { left: calc(50% - 78px); }
+  .animals-nav-next { right: calc(50% - 78px); }
+  .animals-counter {
+    position: absolute;
+    left: 50%;
+    bottom: -38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    min-height: 28px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.78);
+    box-shadow: 0 12px 28px rgba(16,35,43,.1);
+    transform: translateX(-50%);
+  }
+  .animals-carousel { padding-bottom: 56px; }
   .story-panel { min-height: 500px; }
   .support-contact { padding: 40px 34px; }
   .support-contact-grid { grid-template-columns: 1fr; }
@@ -821,7 +846,7 @@ a.contact-channel:hover { transform: translateY(-3px); background: rgba(255,255,
   .animals-carousel { margin-top: 34px; }
   .animals-grid {
     grid-auto-columns: 100%;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
     gap: 14px;
   }
   .animal-card-copy { padding: 28px 20px 20px; }
